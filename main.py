@@ -3,9 +3,12 @@ import PySimpleGUI as sg
 import time
 import os
 
+
 if not os.path.exists("todos.txt"):
     with open("todos.txt", "w") as file:
         pass
+
+# Customise Gui
 
 sg.theme("Black")
 clock = sg.Text('', key='clock')
@@ -25,6 +28,8 @@ window = sg.Window("My to do app", layout=[[clock],
                    [list_box, edit_button, complete_button],
                    [exit_button]], font=('Helvetica', 10))
 
+
+# Build a match case statement
 
 while True:
     event, values = window.read(timeout=10)
